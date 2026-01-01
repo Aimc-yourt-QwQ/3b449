@@ -86,4 +86,5 @@ mv $HOME/3b449/termux.properties $HOME/.termux/termux.properties
 rm -f $HOME/.wget-hsts
 clear
 echo "重启这个应用，再输入start就全部完成了。"
+#防止你看不到
 sleep 2000
