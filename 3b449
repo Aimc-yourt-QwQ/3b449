@@ -23,6 +23,7 @@ yes | apt install cmatrix nyancat fortune cowsay sl ninvaders nethack moon-buggy
 yes | build-essential cmake ninja gettext libtool autoconf automake doxygen ncurses-utils gperf pkg-config
 yes | apt install neovim
 yes | apt install lua53 lua52 lua51
+yes | apt install nodejs-lts
 
 wget -q -O - http://ohmyposh.dev/install.sh | bash
 
@@ -69,6 +70,10 @@ done
 rm -rf ~/.config/nvim/.git
 
 npm i -g @iflow-ai/iflow-cli@latest
+
+#我不知道为什么但我就是这样装起来的
+export GYP_DEFINES="android_ndk_path=''"
+npm install -g @google/gemini-cli
 
 mkdir .Python .C++ .C .Java .C# .Go
 ln -s $PREFIX $HOME
