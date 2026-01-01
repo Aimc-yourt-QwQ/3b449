@@ -1,0 +1,210 @@
+#!/bin/bash
+cd $HOME
+rm -f $HOME/.hushlogin
+touch $HOME/.hushlogin
+
+cat > $PREFIX/etc/apt/sources.list << 'EOF'
+deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main
+
+EOF
+
+apt update
+yes | apt upgrade
+
+yes | apt install fish
+
+yes | apt install apt git nmap fzf wget unzip fish eza fd nodejs zoxide tree htop openssh tig bat ripgrep jq yq curl ncdu tmux gdb neofetch fastfetch gh proot proot-distro clang sqlite golang rust php ruby bc ffmpeg nginx
+
+yes | apt install oh-my-posh
+yes | apt install dotnet9.0
+yes | apt install python python-pip
+yes | apt install openjdk-25
+yes | apt install cmatrix nyancat fortune cowsay sl ninvaders nethack moon-buggy greed tty-solitaire
+yes | build-essential cmake ninja gettext libtool autoconf automake doxygen ncurses-utils gperf pkg-config
+yes | apt install neovim
+yes | apt install lua53 lua52 lua51
+
+wget -q -O - http://ohmyposh.dev/install.sh | bash
+
+while true; do
+    if git clone https://github.com/pipeseroni/pipes.sh.git; then
+        break
+    fi
+done
+
+mv $HOME/pipes.sh/pipes.sh $PREFIX/bin/pipes
+rm -rf $HOME/pipes.sh
+
+gem install lolcat
+
+fastfetch
+fastfetch --gen-config
+neofetch
+clear
+
+cat > $HOME/.config/fastfetch/config.jsonc << 'EOF'
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "padding": {
+      "top": 2,
+      "left": 1,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": "  ➜  ",
+    "color": {
+      "keys": "cyan"
+    },
+    "size": {
+      "binary_prefix": "si"
+    },
+    "percent": {
+      "type": 3 
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+
+    // --- system ---
+    {
+      "type": "os",
+      "key": " OS",
+      "keyColor": "blue"
+    },
+    {
+      "type": "kernel",
+      "key": " Kernel",
+      "keyColor": "white"
+    },
+    {
+      "type": "uptime",
+      "key": " Uptime",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": " Packages",
+      "keyColor": "red"
+    },
+    {
+      "type": "shell",
+      "key": " Shell",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "de",
+      "key": " DE",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "wm",
+      "key": " WM",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "terminal",
+      "key": " Terminal",
+      "keyColor": "green"
+    },
+
+    "break",
+
+    // --- hardware ---
+    {
+      "type": "cpu",
+      "key": " CPU",
+      "keyColor": "blue",
+      "format": "{1}"
+    },
+    {
+      "type": "gpu",
+      "key": "󰥚 GPU",
+      "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": " Memory",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "disk",
+      "key": " Disk",
+      "keyColor": "cyan",
+      "folders": ["/", "/storage/emulated/0/"]
+    },
+    // ----------------
+    
+    {
+      "type": "display",
+      "key": " Display",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "battery",
+      "key": " Battery",
+      "keyColor": "red"
+    },
+    {
+      "type": "localip",
+      "key": " IP",
+      "keyColor": "white",
+      "compact": true
+    },
+
+    "break",
+
+    // --- block ---
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "block": {
+        "range": [1, 6]
+      }
+    }
+  ]
+}
+EOF
+
+#解决ZT（ZeroTermux）的一个方法
+mkdir $HOME/.img
+cp $HOME/3b449/.jpg $HOME/.img
+
+rm $HOME/.termux/termux.properties
+cp $HOME/3b449/termux.properties $HOME/.termux
+
+cp $HOME/3b449/colors.properties $HOME/.termux
+
+cp $HOME/3b449/font.ttf $HOME/.termux
+
+cat > $HOME/.bashrc << 'EOF'
+fastfetch
+echo ""
+exec fish
+
+EOF
+
+while true; do
+    if git clone https://github.com/LazyVim/starter ~/.config/nvim; then
+        break
+    fi
+done
+
+rm -rf ~/.config/nvim/.git
+
+npm -i -g @iflow-ai/iflow-cli@latest
+
+mkdir .Python .C++ .C .Java .C# .Go
+ln -s $PREFIX $HOME
+
+chmod +x $HOME/3b449/start
+mv $HOME/3b449/start $PREFIX/bin
+
+rm -f $HOME/.termux/termux.properties
+mv $HOME/3b449/termux.properties $HOME/.termux/termux.properties
+clear
+echo "重启这个应用，再输入start就全部完成了。"
+sleep 2000
