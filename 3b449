@@ -1,0 +1,84 @@
+#!/bin/bash
+cd $HOME
+rm -f $HOME/.hushlogin
+touch $HOME/.hushlogin
+
+cat > $PREFIX/etc/apt/sources.list << 'EOF'
+deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main
+
+EOF
+
+apt update
+yes | apt upgrade
+
+yes | apt install fish
+
+yes | apt install apt git nmap fzf wget unzip fish eza fd nodejs zoxide tree htop openssh tig bat ripgrep jq yq curl ncdu tmux gdb neofetch fastfetch gh proot proot-distro clang sqlite golang rust php ruby bc ffmpeg nginx
+
+yes | apt install oh-my-posh
+yes | apt install dotnet9.0
+yes | apt install python python-pip
+yes | apt install openjdk-25
+yes | apt install cmatrix nyancat fortune cowsay sl ninvaders nethack moon-buggy greed tty-solitaire
+yes | build-essential cmake ninja gettext libtool autoconf automake doxygen ncurses-utils gperf pkg-config
+yes | apt install neovim
+yes | apt install lua53 lua52 lua51
+
+wget -q -O - http://ohmyposh.dev/install.sh | bash
+
+while true; do
+    if git clone https://github.com/pipeseroni/pipes.sh.git; then
+        break
+    fi
+done
+
+mv $HOME/pipes.sh/pipes.sh $PREFIX/bin/pipes
+rm -rf $HOME/pipes.sh
+
+gem install lolcat
+
+fastfetch
+fastfetch --gen-config
+neofetch
+clear
+
+#解决ZT（ZeroTermux）的一个方法
+mkdir $HOME/.img
+cp $HOME/3b449/back.jpg $HOME/.img/
+
+rm $HOME/.termux/termux.properties
+cp $HOME/3b449/termux.properties $HOME/.termux
+
+cp $HOME/3b449/colors.properties $HOME/.termux
+
+cp $HOME/3b449/font.ttf $HOME/.termux
+
+cat > $HOME/.bashrc << 'EOF'
+fastfetch
+echo ""
+exec fish
+
+EOF
+
+while true; do
+    if git clone https://github.com/LazyVim/starter ~/.config/nvim; then
+        break
+    fi
+done
+
+rm -rf ~/.config/nvim/.git
+
+npm i -g @iflow-ai/iflow-cli@latest
+
+mkdir .Python .C++ .C .Java .C# .Go
+ln -s $PREFIX $HOME
+
+chmod +x $HOME/3b449/start
+mv $HOME/3b449/start $PREFIX/bin
+
+rm -f $HOME/.termux/termux.properties
+mv $HOME/3b449/termux.properties $HOME/.termux/termux.properties
+rm -f $HOME/.wget-hsts
+clear
+echo "重启这个应用，再输入start就全部完成了。"
+sleep 2000
