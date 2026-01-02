@@ -40,6 +40,8 @@ gem install lolcat
 
 fastfetch
 fastfetch --gen-config
+fastfetch --gen-config
+rm -rf $HOME/fastfetch
 neofetch
 clear
 
