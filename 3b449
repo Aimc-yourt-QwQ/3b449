@@ -87,8 +87,9 @@ rm -f $HOME/.termux/termux.properties
 mv $HOME/3b449/termux.properties $HOME/.termux/termux.properties
 rm -f $HOME/.wget-hsts
 clear
-echo "重启这个应用，再输入start就完成了，接下来会创建100个僵尸进程。系统应该会自动杀掉Termux"
+echo "重启这个应用，再输入start就完成了，但接下来会创建足够多的僵尸进程。系统应该会自动杀掉Termux"
 sleep 2000
+#暴力解法。脚本在子进程，所以exit无效
 sleep infinity &
 sleep infinity &
 sleep infinity &
