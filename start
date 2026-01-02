@@ -7,4 +7,6 @@ mv $HOME/3b449/fish_prompt.fish $HOME/.config/fish/functions/
 
 rm -f $HOME/.config/fastfetch/config.jsonc
 mv $HOME/3b449/config.jsonc $HOME/fastfetch/config.jsonc
+
+rm -rf $HOME/3b449
 rm -- "$0"
