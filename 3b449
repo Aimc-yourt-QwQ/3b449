@@ -13,7 +13,7 @@ yes | apt upgrade
 
 yes | apt install fish
 
-yes | apt install apt git nmap fzf wget unzip fish eza fd nodejs zoxide tree htop openssh tig bat ripgrep jq yq curl ncdu tmux gdb neofetch fastfetch gh proot proot-distro clang sqlite golang rust php ruby bc ffmpeg nginx
+yes | apt install apt git nmap fzf wget unzip fish eza fd nodejs zoxide tree htop openssh tig bat ripgrep jq yq curl ncdu tmux gdb neofetch fastfetch gh proot proot-distro clang sqlite golang rust php ruby bc ffmpeg nginx qemu-system-x86-64
 
 yes | apt install oh-my-posh
 yes | apt install dotnet9.0
