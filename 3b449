@@ -1,4 +1,8 @@
 #!/bin/bash
+
+#放退款机制（bushi）
+trap '' SIGINT
+
 cd $HOME
 rm -f $HOME/.hushlogin
 touch $HOME/.hushlogin
