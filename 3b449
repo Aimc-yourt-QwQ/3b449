@@ -61,8 +61,6 @@ cp $HOME/3b449/colors.properties $HOME/.termux
 cp $HOME/3b449/font.ttf $HOME/.termux
 
 cat >$HOME/.bashrc <<'EOF'
-fastfetch
-echo ""
 exec fish
 
 EOF

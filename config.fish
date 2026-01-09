@@ -4,6 +4,8 @@ end
 
 set -g fish_greeting ""
 
+fastfetch
+
 alias v nvim
 alias n nvim
 alias kg 'pidof nginx | xargs kill -9'
