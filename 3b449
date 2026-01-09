@@ -24,7 +24,7 @@ yes | apt install dotnet9.0
 yes | apt install python python-pip
 yes | apt install openjdk-25
 yes | apt install cmatrix nyancat fortune cowsay sl ninvaders nethack moon-buggy greed tty-solitaire
-yes | apt install build-essential cmake ninja gettext libtool autoconf automake doxygen ncurses-utils gperf pkg-config
+yes | apt install build-essential cmake ninja gettext libtool autoconf automake doxygen ncurses-utils gperf pkg-config glow
 yes | apt install neovim
 yes | apt install lua53 lua52 lua51
 yes | apt install nodejs-lts
