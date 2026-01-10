@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#放退款机制（bushi）
+#放退款机制。
 trap '' SIGINT
 
 cd $HOME
