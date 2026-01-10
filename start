@@ -11,3 +11,4 @@ mv $HOME/3b449/config.jsonc $HOME/.config/fastfetch/config.jsonc
 
 rm -rf $HOME/3b449
 rm -- "$0"
+#我喜欢微软
