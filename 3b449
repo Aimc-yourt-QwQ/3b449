@@ -8,7 +8,7 @@ rm -f $HOME/.hushlogin
 touch $HOME/.hushlogin
 
 cat >$PREFIX/etc/apt/sources.list <<'EOF'
-deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main
+deb https://mirrors.bfsu.edu.cn/termux/termux-packages-24 stable main
 
 EOF
 
@@ -17,7 +17,7 @@ yes | apt upgrade
 
 yes | apt install fish
 
-yes | apt install apt git nmap fzf wget unzip fish eza fd nodejs zoxide tree htop openssh tig bat ripgrep jq yq curl ncdu tmux gdb neofetch fastfetch gh proot proot-distro clang sqlite golang rust php ruby bc ffmpeg nginx qemu-system-x86-64
+yes | apt install apt git nmap fzf wget unzip fish eza fd nodejs zoxide tree htop openssh tig bat ripgrep jq yq curl ncdu tmux gdb neofetch gh proot proot-distro clang sqlite golang rust php ruby bc ffmpeg nginx qemu-system-x86-64
 
 yes | apt install oh-my-posh
 yes | apt install dotnet9.0
@@ -70,6 +70,7 @@ while true; do
     break
   fi
 done
+apt install fastfetch -y
 
 rm -rf ~/.config/nvim/.git
 
